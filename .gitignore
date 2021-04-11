@@ -4,6 +4,7 @@
 .env
 
 # compiled output
+public
 /dist
 /tmp
 /out-tsc

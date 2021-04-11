@@ -5,11 +5,16 @@ const express = require('express');
 const app = express();
 const data = require('./weather.json');
 const apiRouter = express.Router();
+const port = process.env.PORT || config.port || 80;
 
 app.use(cors());
 app.use(express.json());
-app.use('/api', apiRouter);
+app.use(express.static(process.cwd() + '/public'));
+app.get('/', (req, res) => {
+	res.sendFile(process.cwd() + '/public/index.html');
+});
 
+app.use('/api', apiRouter);
 apiRouter.get('/', (req, res) => {
 	res.send([{ message: 'Hello World' }]);
 });
@@ -24,6 +29,6 @@ apiRouter.post('/weather', (req, res) => {
 	res.json(data);
 });
 
-app.listen(config.port, () => {
-	console.log(`Server started at port ${config.port}`);
+app.listen(port, () => {
+	console.log(`Server started at port ${port}`);
 });
