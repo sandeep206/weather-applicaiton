@@ -4,7 +4,6 @@
 .env
 
 # compiled output
-public
 /dist
 /tmp
 /out-tsc
@@ -51,3 +50,4 @@ Thumbs.db
 
 # Dummy data
 server/*.json
+.gitignore
