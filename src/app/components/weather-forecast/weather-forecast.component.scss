@@ -1,0 +1,70 @@
+/* next-5-days */
+.next-5-days {
+  width: 100%;
+  margin-top: 1em;
+
+  &__heading {
+    color: rgba(255,255,255,0.8);
+    font-size: 1em;
+    font-weight: normal;
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.3em;
+    padding: 0.8em 0;
+    width: 100%;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,0.20);
+    font-size: 1.19em;
+    text-align: center;
+  }
+
+  &__label {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.83em;
+  }
+
+  &__date, &__high, &__low,
+  &__icon, &__rain, &__wind {
+    width: 33.33333%;
+    font-size: 0.95em;
+  }
+
+  &__date, &__high, &__low {
+    margin-bottom: 0.6em;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .next-5-days {
+    &__date, &__high, &__low,
+    &__icon, &__rain, &__wind {
+      width: 16.666666%;
+      margin-bottom: initial;
+    }
+
+    &__date {
+      order: -2;
+    }
+
+    &__icon {
+      order: -1;
+    }
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .next-5-days__heading {
+    font-size: 1.125em;
+  }
+}

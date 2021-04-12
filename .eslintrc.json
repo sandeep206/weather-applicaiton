@@ -30,7 +30,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "app",
+            "prefix": "weather",
             "style": "kebab-case"
           }
         ],
@@ -38,7 +38,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": "weather",
             "style": "camelCase"
           }
         ]

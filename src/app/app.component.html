@@ -1,9 +1,7 @@
-
-
-
-	<div>
-				<span>{{ title }} app is running!</span>
-
-	</div>
-
-<router-outlet></router-outlet>
+<header>
+  <h1><a href="#" [routerLink]="['/weather-cities']">Weather Forecast</a></h1>
+</header>
+<main class="main-container">
+  <router-outlet></router-outlet>
+</main>
+<footer><small>&copy; Weather Company</small></footer>

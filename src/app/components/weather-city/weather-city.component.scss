@@ -1,0 +1,80 @@
+:host {
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background: linear-gradient(to bottom, #164fbb 0%, #66a0d6 100%);
+}
+
+.location-and-date {
+  width: 100%;
+
+  &__location {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 600;
+  }
+}
+
+.current-temperature {
+  width: 100%;
+  display: flex;
+  margin-top: 0.25em;
+
+  &__icon-container {
+    flex-grow: 1.25;
+    text-align: center;
+  }
+  &__content-container {
+    flex-grow: 1;
+    text-align: center;
+  }
+  &__icon {
+    width: 10.5em;
+  }
+  &__value {
+    font-size: 5.25em;
+    font-weight: 300;
+  }
+  &__summary {
+    margin-top: -0.5em;
+    margin-left: -0.6em;
+    font-size: 1.125em;
+    text-align: center;
+  }
+}
+
+.current-stats {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 1em;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+  &__value {
+    margin-top: 1em;
+    font-size: 1.44em;
+  }
+
+  &__label {
+    color: rgba(255,255,255,0.6);
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .current-stats {
+    margin-bottom: 1em;
+    padding-bottom: 0;
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid rgba(255,255,255,0.5);
+  }
+
+  .current-temperature,
+  .current-stats {
+    width: 50%;
+  }
+}

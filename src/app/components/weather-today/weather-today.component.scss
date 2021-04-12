@@ -1,0 +1,45 @@
+
+/* weather-by-hour */
+.weather-by-hour {
+  display: none;
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  .weather-by-hour {
+    display: block;
+    margin-bottom: 0.5em;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__heading {
+      color: rgba(255,255,255,0.8);
+      font-size: 1em;
+      font-weight: normal;
+    }
+
+    &__item {
+      padding: 0.8em 0;
+      width: 13%;
+      border-radius: 5px;
+      background-color: rgba(0,0,0,0.15);
+      font-size: 1.125em;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .weather-by-hour__heading {
+    font-size: 1.125em;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .weather-by-hour__item {
+    width: 6.05em;
+  }
+}
