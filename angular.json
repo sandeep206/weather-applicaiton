@@ -150,5 +150,8 @@
       }
     }
   },
-  "defaultProject": "weatherApplication"
+  "defaultProject": "weatherApplication",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

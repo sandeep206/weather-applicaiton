@@ -20,9 +20,9 @@ export class WeatherService {
 	public apiURI = '/api';
 	constructor(public httpClient: HttpClient) {}
 
-	getCurrentWeather(cityId: string = 'London'): Observable<City> {
+	public getCurrentWeather(cityId: string = 'London'): Observable<City> {
 		return this.httpClient
-			.post<City>(`${this.apiURI}/weather`, { city: cityId })
+			.post<City>(`${this.apiURI}/weather`, { cityId })
 			.pipe(
 				map((city: City) => {
 					return {
@@ -33,9 +33,9 @@ export class WeatherService {
 			);
 	}
 
-	getWeatherForecast(cityId: string): Observable<Forecast> {
+	public getWeatherForecast(cityId: string): Observable<Forecast> {
 		return this.httpClient
-			.post<Forecast>(`${this.apiURI}/forecast`, { city: cityId })
+			.post<Forecast>(`${this.apiURI}/forecast`, { cityId })
 			.pipe(
 				map((forecast) => {
 					return {

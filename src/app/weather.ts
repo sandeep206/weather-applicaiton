@@ -1,3 +1,8 @@
+export interface CityKeyMap {
+	city: string;
+	cityId: string;
+}
+
 export interface Weather {
 	id: string;
 	main: string;

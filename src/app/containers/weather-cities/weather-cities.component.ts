@@ -1,38 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { forkJoin, Observable } from 'rxjs';
-import { WeatherService } from '../../weather.service';
+import { Observable } from 'rxjs';
 import { City } from '../../weather';
-interface CityKeyMap {
-	city: string;
-	cityId: string;
-}
+import { select, Store } from '@ngrx/store';
+import { CityWeatherState, selectCitiesWeather } from './../store';
+import * as fromWeatherActions from '../store/action/weather.actions';
 @Component({
 	selector: 'weather-cities',
 	templateUrl: './weather-cities.component.html',
 	styleUrls: ['./weather-cities.component.scss']
 })
 export class WeatherCitiesComponent implements OnInit {
-	public cities$!: Observable<City[]>;
+	public cities$!: Observable<City[] | null>;
 
-	private cityMap: CityKeyMap[] = [
-		{ city: 'netherlands', cityId: '2759794' },
-		{ city: 'germany', cityId: '2921044' },
-		{ city: 'belgium', cityId: '2802361' },
-		{ city: 'britain', cityId: '2643741' }
-	];
-
-	constructor(public weatherService: WeatherService, public router: Router) {}
+	constructor(public router: Router, public store: Store<CityWeatherState>) {}
 
 	ngOnInit(): void {
-		this.getWeather();
+		this.cities$ = this.store.pipe(select(selectCitiesWeather));
 	}
 
-	public getWeather(): void {
-		this.cities$ = forkJoin(
-			this.cityMap
-				.map(({ cityId }: CityKeyMap) => cityId)
-				.map((cityId) => this.weatherService.getCurrentWeather(cityId))
-		);
+	onClick(cityId: string): void {
+		this.store.dispatch(fromWeatherActions.loadWeatherDetails({ cityId }));
 	}
 }

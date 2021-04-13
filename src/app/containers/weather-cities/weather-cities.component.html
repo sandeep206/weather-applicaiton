@@ -1,7 +1,5 @@
 <ng-container *ngIf="cities$ | async as cities">
-
-  <a [routerLink]="['/weather-details', city.id]" *ngFor="let city of cities" href="">
-    <weather-city [city]="city"></weather-city>
-  </a>
+    <weather-city *ngFor="let city of cities"
+     [city]="city" (loadForecast)="onClick($event)"></weather-city>
 </ng-container>
 
