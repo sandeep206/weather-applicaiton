@@ -19,3 +19,8 @@ export const selectCityForecast = createSelector(
 	selectWeatherAppState,
 	(state: fromWeatherReducer.CityWeatherState) => state.cityForecast
 );
+
+export const selectIsForecastLoaded = createSelector(
+	selectWeatherAppState,
+	(state: fromWeatherReducer.CityWeatherState) => !state.isLoading
+);

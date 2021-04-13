@@ -5,8 +5,8 @@ import * as fromWeatherActions from '../action/weather.actions';
 export const weatherFeatureKey = 'weather';
 
 export interface CityWeatherState {
-	isLoading?: boolean;
-	errorMessage?: string;
+	isLoading: boolean;
+	errorMessage: string;
 	selectedCity: string;
 	citiesWeather: City[];
 	cityForecast: Forecast | null;

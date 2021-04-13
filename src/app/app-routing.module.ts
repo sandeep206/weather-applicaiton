@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { WeatherForecastGuard } from './weather-forecast.guard';
 import { WeatherCitiesComponent } from './containers/weather-cities/weather-cities.component';
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
 		loadChildren: () =>
 			import('./containers/weather-details/weather-details.module').then(
 				(m) => m.WeatherDetailsModule
-			)
+			),
+		canActivate: [WeatherForecastGuard]
 	},
 	{
 		path: '**',
