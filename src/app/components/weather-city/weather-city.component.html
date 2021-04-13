@@ -1,34 +1,34 @@
 <a href="#" ></a>
   <div class="location-and-date">
-    <h1 class="location-and-date__location">London, UK</h1>
-    <div>Sunday 4th August</div>
+    <h1 class="location-and-date__location">{{city.name}}, {{city.sys.country}}</h1>
+    <div>{{city.dt | date: 'fullDate'}}</div>
   </div>
   <div class="current-temperature">
     <div class="current-temperature__icon-container">
-      <img src="icons/mostly-sunny.svg" alt="sunny" class="current-temperature__icon">
+      <img [src]="city.weather[0].icon" [alt]="city.weather[0].description" class="current-temperature__icon">
     </div>
     <div class="current-temperature__content-container">
-      <div class="current-temperature__value">21°</div>
-      <div class="current-temperature__summary">Mostly Sunny</div>
+      <div class="current-temperature__value">{{ city.main.temp }}&deg;</div>
+      <div class="current-temperature__summary">{{ city.weather[0].description }}</div>
     </div>
   </div>
   <div class="current-stats">
     <div>
-      <div class="current-stats__value">23&deg;</div>
+      <div class="current-stats__value">{{ city.main.temp_max }}&deg;</div>
       <div class="current-stats__label">High</div>
-      <div class="current-stats__value">14&deg;</div>
+      <div class="current-stats__value">{{ city.main.temp_min }}&deg;</div>
       <div class="current-stats__label">Low</div>
     </div>
     <div>
-      <div class="current-stats__value">7mph</div>
+      <div class="current-stats__value">{{ city.wind.speed }}mph</div>
       <div class="current-stats__label">Wind</div>
-      <div class="current-stats__value">0%</div>
-      <div class="current-stats__label">Rain</div>
+      <div class="current-stats__value">{{ city.main.humidity }}%</div>
+      <div class="current-stats__label">Humidity</div>
     </div>
     <div>
-      <div class="current-stats__value">05:27</div>
+      <div class="current-stats__value">{{ city.sys.sunrise | date: 'shortTime' }}</div>
       <div class="current-stats__label">Sunrise</div>
-      <div class="current-stats__value">20:57</div>
+      <div class="current-stats__value">{{city.sys.sunset | date: 'shortTime'}}</div>
       <div class="current-stats__label">Sunset</div>
     </div>
   </div>

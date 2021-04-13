@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { City } from './../../weather';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'weather-city',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./weather-city.component.scss']
 })
 export class WeatherCityComponent implements OnInit {
+	@Input() city: City = {} as City;
 	ngOnInit(): void {
-		console.log('WeatherCityComponent');
+		console.log('WeatherCityComponent', this.city);
 	}
 }

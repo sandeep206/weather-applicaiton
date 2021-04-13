@@ -1,5 +1,9 @@
 <header>
   <h1><a href="#" [routerLink]="['/weather-cities']">Weather Forecast</a></h1>
+  <div class="menu">
+    <button [routerLink]="['/weather-cities']" routerLinkActive="router-link-active"></button>
+    <button [routerLink]="['/weather-details']" routerLinkActive="router-link-active"></button>
+  </div>
 </header>
 <main class="main-container">
   <router-outlet></router-outlet>

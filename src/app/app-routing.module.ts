@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WeatherCitiesComponent } from './weather-cities/weather-cities.component';
+import { WeatherCitiesComponent } from './containers/weather-cities/weather-cities.component';
 
 const routes: Routes = [
 	{ path: '', redirectTo: 'weather-cities', pathMatch: 'full' },
@@ -9,9 +9,9 @@ const routes: Routes = [
 		component: WeatherCitiesComponent
 	},
 	{
-		path: 'weather-details',
+		path: 'weather-details/:city-id',
 		loadChildren: () =>
-			import('./weather-details/weather-details.module').then(
+			import('./containers/weather-details/weather-details.module').then(
 				(m) => m.WeatherDetailsModule
 			)
 	},
@@ -22,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
+	imports: [RouterModule.forRoot(routes, { enableTracing: true })],
 	exports: [RouterModule]
 })
 export class AppRoutingModule {}

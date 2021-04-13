@@ -1,0 +1,7 @@
+<ng-container *ngIf="cities$ | async as cities">
+
+  <a [routerLink]="['/weather-details', city.id]" *ngFor="let city of cities" href="">
+    <weather-city [city]="city"></weather-city>
+  </a>
+</ng-container>
+
