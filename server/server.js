@@ -17,13 +17,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', apiRouter);
-apiRouter.get('/', (req, res) => {
-	res.send([{ message: 'Hello World' }]);
-});
-// https://api.openweathermap.org/data/2.5/
-apiRouter.post('/weather', (req, res) => {
-	console.log('weather request came', req.body.cityId);
-	// const URI = `${config.apiUrl}/weather?id=${req.body.cityId}&units=metric&appid=${config.apiKey}`;
+
+apiRouter.get('/weather', (req, res) => {
+	console.log('weather request came', req.query.cityId);
+	// const URI = `${config.apiUrl}/weather?id=${req.query.cityId}&units=metric&appid=${config.apiKey}`;
 	// axios({
 	// 	url: URI,
 	// 	responseType: 'json'
@@ -31,9 +28,9 @@ apiRouter.post('/weather', (req, res) => {
 	res.json(weather_data);
 });
 
-apiRouter.post('/forecast', (req, res) => {
-	console.log('forecast request came', req.body.cityId);
-	// const URI = `${config.apiUrl}/forecast?id=${req.body.cityId}&units=metric&appid=${config.apiKey}`;
+apiRouter.get('/forecast', (req, res) => {
+	console.log('forecast request came', req.query.cityId);
+	// const URI = `${config.apiUrl}/forecast?id=${req.query.cityId}&units=metric&appid=${config.apiKey}`;
 	// axios({
 	// 	url: URI,
 	// 	responseType: 'json'

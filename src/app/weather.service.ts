@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { City, Forecast, Hourly, HourlyMap } from './weather';
-import { map, tap } from 'rxjs/operators';
+import { City, Forecast } from './weather';
 
 @Injectable({
 	providedIn: 'root'
@@ -12,12 +11,14 @@ export class WeatherService {
 	constructor(public httpClient: HttpClient) {}
 
 	public getCurrentWeather(cityId: string = 'London'): Observable<City> {
-		return this.httpClient.post<City>(`${this.apiURI}/weather`, { cityId });
+		const params = new HttpParams().append('cityId', cityId);
+		return this.httpClient.get<City>(`${this.apiURI}/weather`, { params });
 	}
 
 	public getWeatherForecast(cityId: string): Observable<Forecast> {
-		return this.httpClient.post<Forecast>(`${this.apiURI}/forecast`, {
-			cityId
+		const params = new HttpParams().append('cityId', cityId);
+		return this.httpClient.get<Forecast>(`${this.apiURI}/forecast`, {
+			params
 		});
 	}
 }
