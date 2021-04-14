@@ -1,6 +1,5 @@
- <button (click)="loadForecast.emit(city.id)" class="flat-button">
  <div class="location-and-date">
-    <h1 class="location-and-date__location">{{city.name}}, {{city.sys.country || city.country}}</h1>
+    <h1 class="location-and-date__location">{{city.name}}, {{city.sys.country}}</h1>
     <div>{{city.dt | date: 'fullDate'}}</div>
   </div>
   <div class="current-temperature">
@@ -32,4 +31,3 @@
       <div class="current-stats__label">Sunset</div>
     </div>
   </div>
-</button>

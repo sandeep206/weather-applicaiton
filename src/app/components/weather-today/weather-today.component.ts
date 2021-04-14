@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Hourly } from './../../weather';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
 	selector: 'weather-today',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 	styleUrls: ['./weather-today.component.scss']
 })
 export class WeatherTodayComponent implements OnInit {
+	@Input() today: Hourly[] = [];
+
 	ngOnInit(): void {
 		console.log('WeatherTodayComponent');
 	}

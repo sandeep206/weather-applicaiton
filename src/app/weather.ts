@@ -61,7 +61,13 @@ export interface Hourly extends Climate {
 	dt_txt: string;
 }
 
+export interface HourlyMap {
+	[key: string]: Hourly;
+}
+
 export interface Forecast {
 	list: Hourly[];
 	city: City;
+	today: Hourly[];
+	future: Hourly[];
 }

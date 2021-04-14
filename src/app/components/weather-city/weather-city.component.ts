@@ -1,5 +1,5 @@
 import { City } from './../../weather';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'weather-city',
@@ -8,5 +8,4 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class WeatherCityComponent {
 	@Input() city: City = {} as City;
-	@Output() loadForecast = new EventEmitter<string>();
 }

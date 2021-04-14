@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { City, Forecast } from './weather';
+import { City, Forecast, Hourly, HourlyMap } from './weather';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
 	providedIn: 'root'

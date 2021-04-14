@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Hourly } from './../../weather';
 
 @Component({
 	selector: 'weather-forecast',
 	templateUrl: './weather-forecast.component.html',
 	styleUrls: ['./weather-forecast.component.scss']
 })
-export class WeatherForecastComponent implements OnInit {
-	ngOnInit(): void {
-		console.log('WeatherForecastComponent');
-	}
+export class WeatherForecastComponent {
+	@Input() future: Hourly[] = [];
 }

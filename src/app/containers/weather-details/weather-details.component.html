@@ -1,3 +1,5 @@
-<weather-city></weather-city>
-<weather-today></weather-today>
-<weather-forecast></weather-forecast>
+<ng-container *ngIf="forecast$ | async as weather">
+  <weather-city [city]="weather.city"></weather-city>
+  <weather-today [today]="weather.today"></weather-today>
+  <weather-forecast [future]="weather.future"></weather-forecast>
+</ng-container>

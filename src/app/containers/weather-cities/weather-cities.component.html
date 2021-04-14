@@ -1,5 +1,8 @@
 <ng-container *ngIf="cities$ | async as cities">
-    <weather-city *ngFor="let city of cities"
-     [city]="city" (loadForecast)="onClick($event)"></weather-city>
+  <ng-container *ngFor="let city of cities">
+    <button (click)="onClick(city.id)" class="flat-button">
+      <weather-city [city]="city"></weather-city>
+    </button>
+  </ng-container>
 </ng-container>
 

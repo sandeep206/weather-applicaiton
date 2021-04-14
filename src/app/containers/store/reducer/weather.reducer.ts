@@ -9,7 +9,7 @@ export interface CityWeatherState {
 	errorMessage: string;
 	selectedCity: string;
 	citiesWeather: City[];
-	cityForecast: Forecast | null;
+	cityForecast: Forecast;
 }
 
 export const initialState: CityWeatherState = {
@@ -17,7 +17,7 @@ export const initialState: CityWeatherState = {
 	errorMessage: '',
 	selectedCity: '',
 	citiesWeather: [],
-	cityForecast: null
+	cityForecast: {} as Forecast
 };
 
 export const cityWeatherReducer = createReducer(
