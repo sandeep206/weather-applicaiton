@@ -44,4 +44,11 @@ npm run e2e
 ```bash
 npm run build
 ```
-Note: The artifacts will be stored under `server/public` for deployment. 
+Note: 
+* The artifacts will be stored under `server/public` for deployment. 
+* The API key is stored in env variables and should be placed in `server/.env`
+```bash
+API_KEY=PRIVATE_KEY_FROM_WEATHER_API
+API_URL='https://api.openweathermap.org/data/2.5/'
+PORT=3000
+```
