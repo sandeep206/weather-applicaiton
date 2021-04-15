@@ -4,7 +4,7 @@
     <div class="weather-by-hour__item" *ngFor="let hour of today">
       <div class="weather-by-hour__hour">{{hour.dt_txt | date: 'h a'}}</div>
       <img src="{{hour.weather[0].icon | imageSize : 'small'}}" alt="Mostly sunny">
-      <div>{{hour.main.temp | wholeNumber}}&deg;</div>
+      <div>{{hour.main.temp | wholeNumber}}&deg;c</div>
     </div>
     </div>
 </div>

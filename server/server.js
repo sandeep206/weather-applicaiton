@@ -20,22 +20,22 @@ app.use('/api', apiRouter);
 
 apiRouter.get('/weather', (req, res) => {
 	console.log('weather request came', req.query.cityId);
-	// const URI = `${config.apiUrl}/weather?id=${req.query.cityId}&units=metric&appid=${config.apiKey}`;
-	// axios({
-	// 	url: URI,
-	// 	responseType: 'json'
-	// }).then((response) => res.json(response.data));
-	res.json(weather_data);
+	const URI = `${config.apiUrl}/weather?id=${req.query.cityId}&units=metric&appid=${config.apiKey}`;
+	axios({
+		url: URI,
+		responseType: 'json'
+	}).then((response) => res.json(response.data));
+	// res.json(weather_data);
 });
 
 apiRouter.get('/forecast', (req, res) => {
 	console.log('forecast request came', req.query.cityId);
-	// const URI = `${config.apiUrl}/forecast?id=${req.query.cityId}&units=metric&appid=${config.apiKey}`;
-	// axios({
-	// 	url: URI,
-	// 	responseType: 'json'
-	// }).then((response) => res.json(response.data));
-	res.json(forecast_data);
+	const URI = `${config.apiUrl}/forecast?id=${req.query.cityId}&units=metric&appid=${config.apiKey}`;
+	axios({
+		url: URI,
+		responseType: 'json'
+	}).then((response) => res.json(response.data));
+	// res.json(forecast_data);
 });
 
 app.listen(port, () => {

@@ -7,7 +7,7 @@ import { CityWeatherState } from './containers/store';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { loadCityWeather } from './containers/store/action/weather.actions';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
 	let component: AppComponent;
 	let fixture: ComponentFixture<AppComponent>;
 	let store: MockStore<CityWeatherState>;
