@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WeatherForecastComponent } from './weather-forecast.component';

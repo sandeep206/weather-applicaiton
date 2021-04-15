@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { reducer, initialState } from './weather.reducer';
 
 describe('Weather Reducer', () => {

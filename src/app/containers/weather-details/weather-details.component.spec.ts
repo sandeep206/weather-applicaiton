@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { By } from '@angular/platform-browser';
 import { CityWeatherState, selectWeatherForecast } from '../store';
 import {

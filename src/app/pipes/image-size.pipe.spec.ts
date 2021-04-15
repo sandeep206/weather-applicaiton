@@ -1,8 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { ImageSizePipe } from './image-size.pipe';
 
 describe('ImageSizePipe', () => {
-  it('create an instance', () => {
-    const pipe = new ImageSizePipe();
-    expect(pipe).toBeTruthy();
-  });
+	it('create an instance', () => {
+		const pipe = new ImageSizePipe();
+		expect(pipe).toBeTruthy();
+	});
 });

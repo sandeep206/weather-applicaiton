@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { ImageSizePipe } from './../../pipes/image-size.pipe';
 import { WeatherComponentsModule } from './../weather-components.module';
 import { ComponentFixture, TestBed } from '@angular/core/testing';

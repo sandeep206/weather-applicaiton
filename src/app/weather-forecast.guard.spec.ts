@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-unsafe-call */
 import { TestBed, fakeAsync, tick } from '@angular/core/testing';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import {

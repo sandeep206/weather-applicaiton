@@ -1,8 +1,7 @@
 <ng-container *ngIf="cities$ | async as cities">
-  <ng-container *ngFor="let city of cities">
-    <div (click)="onClick(city.id)" class="flat-button">
-      <weather-city [city]="city"></weather-city>
-    </div>
-  </ng-container>
+	<ng-container *ngFor="let city of cities">
+		<div (click)="onClick(city.id)" class="flat-button">
+			<weather-city [city]="city"></weather-city>
+		</div>
+	</ng-container>
 </ng-container>
-
