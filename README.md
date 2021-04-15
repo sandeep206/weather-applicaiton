@@ -1,27 +1,46 @@
 # WeatherApplication
+The weather application displays weather of 5 cities on dashboard and forecast details of coming hour and future days.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.8.
+## This project is made with 
+- Angular 
+- Typescript
+- NgRx and RxJs operators
+- Node server
+- HTML5/ SCSS
+## Features covered:
+- Weather Dashboard and forecast details 
+- Container and Presentational components
+- NgRx to store data and queried using selector
+- Unit testing using Jasmine
+- End to end testing using Cypress.
+- ESlint with strict mode for linting
+- Prettier for code formatting.
+- Weather API keys are stored in .env variables
+- Deployed in  and also used proxy config for frontend app and server.
 
-## Development server
+## Commands used
+- for frontend server
+```bash
+npm run start
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- for node server
+```bash
+npm run serve
+```
 
-## Code scaffolding
+- for unit testing using jasmine
+```bash
+npm run test
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- for end to end testing using cypress
+```bash
+npm run e2e
+```
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- for deployment: building using --prod
+```bash
+npm run build
+```
+Note: The artifacts will be stored under `server/public` for deployment. 
