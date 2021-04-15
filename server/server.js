@@ -5,7 +5,6 @@ const express = require('express');
 const app = express();
 const weather_data = require('./weather.json');
 const forecast_data = require('./forecast.json');
-const { response } = require('express');
 const apiRouter = express.Router();
 const port = process.env.PORT || config.port || 80;
 
@@ -19,7 +18,6 @@ app.get('/', (req, res) => {
 app.use('/api', apiRouter);
 
 apiRouter.get('/weather', (req, res) => {
-	console.log('weather request came', req.query.cityId);
 	const URI = `${config.apiUrl}/weather?id=${req.query.cityId}&units=metric&appid=${config.apiKey}`;
 	axios({
 		url: URI,
@@ -29,7 +27,6 @@ apiRouter.get('/weather', (req, res) => {
 });
 
 apiRouter.get('/forecast', (req, res) => {
-	console.log('forecast request came', req.query.cityId);
 	const URI = `${config.apiUrl}/forecast?id=${req.query.cityId}&units=metric&appid=${config.apiKey}`;
 	axios({
 		url: URI,
