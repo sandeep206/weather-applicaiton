@@ -1,6 +1,6 @@
 # WeatherApplication
 The weather application displays weather of 5 cities on dashboard and forecast details of coming hour and future days.
-
+URL: https://weather-application-206.herokuapp.com/weather-cities
 ## This project is made with 
 - Angular 
 - Typescript
@@ -16,7 +16,8 @@ The weather application displays weather of 5 cities on dashboard and forecast d
 - ESlint with strict mode for linting
 - Prettier for code formatting.
 - Weather API keys are stored in .env variables
-- Deployed in  and also used proxy config for frontend app and server.
+- Deployed in Heroku and also used proxy config for frontend app and server.
+
 
 ## Commands used
 - for frontend server
