@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
-import { CityWeatherState, getWeatherForecast } from '../store';
+import { CityWeatherState, selectWeatherForecast } from '../store';
 import { Forecast } from './../../weather';
 
 @Component({
@@ -16,7 +16,7 @@ export class WeatherDetailsComponent implements OnInit {
 	constructor(public store: Store<CityWeatherState>, public router: Router) {}
 
 	ngOnInit(): void {
-		this.forecast$ = this.store.pipe(select(getWeatherForecast));
+		this.forecast$ = this.store.pipe(select(selectWeatherForecast));
 	}
 
 	back(): void {

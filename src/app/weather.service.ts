@@ -10,7 +10,7 @@ export class WeatherService {
 	public apiURI = '/api';
 	constructor(public httpClient: HttpClient) {}
 
-	public getCurrentWeather(cityId: string = 'London'): Observable<City> {
+	public getCurrentWeather(cityId: string): Observable<City> {
 		const params = new HttpParams().append('cityId', cityId);
 		return this.httpClient.get<City>(`${this.apiURI}/weather`, { params });
 	}
