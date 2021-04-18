@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export type ImageSizeType = 'small' | 'large';
 @Pipe({
-	name: 'imageSize'
+	name: 'imageSize',
+	pure: true
 })
 export class ImageSizePipe implements PipeTransform {
 	transform(icon: string, imageType: ImageSizeType): string {

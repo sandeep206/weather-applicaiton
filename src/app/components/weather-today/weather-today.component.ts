@@ -1,15 +1,12 @@
 import { Hourly } from './../../weather';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
 	selector: 'weather-today',
 	templateUrl: './weather-today.component.html',
-	styleUrls: ['./weather-today.component.scss']
+	styleUrls: ['./weather-today.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class WeatherTodayComponent implements OnInit {
+export class WeatherTodayComponent {
 	@Input() today: Hourly[] = [];
-
-	ngOnInit(): void {
-		console.log('WeatherTodayComponent');
-	}
 }

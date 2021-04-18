@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { City } from '../../weather';
@@ -8,7 +8,8 @@ import * as fromWeatherActions from '../store/action/weather.actions';
 @Component({
 	selector: 'weather-cities',
 	templateUrl: './weather-cities.component.html',
-	styleUrls: ['./weather-cities.component.scss']
+	styleUrls: ['./weather-cities.component.scss'],
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WeatherCitiesComponent implements OnInit {
 	public cities$!: Observable<City[] | null>;
