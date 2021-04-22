@@ -26,7 +26,7 @@ const currentDate = () => {
 	return `${now.getFullYear()}-0${now.getMonth() + 1}-${now.getDate()}`;
 };
 
-const selectHourlyForecast = createSelector(
+export const selectHourlyForecast = createSelector(
 	selectWeatherAppState,
 	(state: fromWeatherReducer.CityWeatherState): Hourly[] =>
 		state.cityForecast.list
@@ -67,7 +67,14 @@ export const selectWeatherForecast = createSelector(
 	selectCity,
 	selectTodayForecast,
 	selectFutureForecast,
-	(city: City | undefined, today: Hourly[], future: Hourly[]): Forecast => {
-		return { city, today, future } as Forecast;
+	selectHourlyForecast,
+	(
+		city: City | undefined,
+		today: Hourly[],
+		future: Hourly[],
+		list: Hourly[]
+	): Forecast | undefined => {
+		if (typeof city == undefined) return;
+		return { city, today, future, list } as Forecast;
 	}
 );

@@ -11,7 +11,7 @@ import { Forecast } from './../../weather';
 	styleUrls: ['./weather-details.component.scss']
 })
 export class WeatherDetailsComponent implements OnInit {
-	public forecast$!: Observable<Forecast>;
+	public forecast$!: Observable<Forecast | undefined>;
 
 	constructor(public store: Store<CityWeatherState>, public router: Router) {}
 
