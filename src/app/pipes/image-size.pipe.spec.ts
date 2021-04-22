@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import { ImageSizePipe } from './image-size.pipe';
 
-fdescribe('ImageSizePipe', () => {
+describe('ImageSizePipe', () => {
 	let pipe: ImageSizePipe;
 	let icon = '';
 

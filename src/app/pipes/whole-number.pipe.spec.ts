@@ -12,8 +12,18 @@ describe('WholeNumberPipe', () => {
 		expect(pipe).toBeTruthy();
 	});
 
-	it('should return a whole number', () => {
+	it('should return a 56 number', () => {
 		const output: number = pipe.transform('55.5');
+		expect(output).toBe(56);
+	});
+
+	it('should return a 55 number', () => {
+		const output: number = pipe.transform('55.3');
 		expect(output).toBe(55);
+	});
+
+	it('should return a 7 number', () => {
+		const output: number = pipe.transform('6.8');
+		expect(output).toBe(7);
 	});
 });
