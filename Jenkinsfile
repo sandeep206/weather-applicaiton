@@ -5,13 +5,22 @@ pipeline {
         productizedApps = 'retail,business,wealth'    
     }
     stages {
-      stage('build') {
+      stage("build") {
+        steps {
+          echo 'building the application'
+        }
       }
-      stage('test') {
+      stage("test") {
+         steps {
+          echo 'testing the application'
+        }
       }
-      stage('test') {
+      stage("deploy") {
+         steps {
+          echo 'deploying the application'
+        }
       }
-      stage('Hello') {
+      stage("Hello") {
         steps {
           script {
             def apps = env.productizedApps.tokenize(',');
